@@ -85,6 +85,14 @@ We provide several pre-trained models:
 
 You can check the hyperparameters we used to train these models in the [section: Our Hyperparameters](#our-hyperparameters)
 
+### Docker
+
+```
+docker-compose up
+```
+
+You should be able to view the demo at localhost:7860
+
 ### Interactive demo
 In this demo, you should be able run DUSt3R on your machine to reconstruct a scene.  
 First select images that depicts the same scene.  

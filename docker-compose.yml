@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  dust3r:
+    container_name: dust3r
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:512
+    networks:
+      - main
+    restart: always
+    ports:
+      - "7860:7860"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: 'nvidia'
+              count: all
+              capabilities: [gpu]
+
+networks:
+  main:
+    driver: bridge
